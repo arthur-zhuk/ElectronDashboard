@@ -13,10 +13,12 @@ export type actionType = {
   type: string
 };
 
-export default function visibilityFilter(state: ui = '', action: actionType) {
+export default function visibilityFilter(state: string = '', action: actionType) {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter;
+    case 'TOGGLE_DIV':
+      return action.targetDiv;
     default:
       return state;
   }
