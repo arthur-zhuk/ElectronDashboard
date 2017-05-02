@@ -1,17 +1,30 @@
 // @flow
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Home.css';
+import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
+import styles from './Home.scss';
 
 export default class Home extends Component {
+  handleDivClick = (event) => {
+    const target = event.target;
+    console.log(target.getAttribute('data-tid'));
+    this.props.toggleDiv(target);
+  }
+
   render() {
     return (
-      <div>
-        <div className={styles.container} data-tid="container">
-          <h2>Home</h2>
-          <Link to="/counter">to Counter</Link>
-        </div>
+      <div onClick={(event) => this.handleDivClick(event)} className={styles.sixpanel} data-tid="sixpanel" role="presentation">
+        <div className={styles.one} data-tid="one">1</div>
+        <div className={styles.two} data-tid="two">2</div>
+        <div className={styles.three} data-tid="three">3</div>
+        <div className={styles.four} data-tid="four">4</div>
+        <div className={styles.five} data-tid="five">5</div>
+        <div className={styles.six} data-tid="six">6</div>
       </div>
     );
   }
 }
+
+Home.propTypes = {
+  toggleDiv: PropTypes.func.isRequired
+};
