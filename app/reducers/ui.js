@@ -6,17 +6,15 @@ const initialState = {
 };
 */
 export type uiStateType = {
-  ui: string
+  uiId: string
 };
 
 export type actionType = {
   type: string
 };
 
-export default function visibilityFilter(state: string = '', action: actionType) {
+export default function visibilityFilter(state = '', action: actionType) {
   switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter;
     case 'TOGGLE_DIV':
       return action.targetDiv;
     default:
