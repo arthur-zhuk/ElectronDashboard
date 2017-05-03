@@ -5,11 +5,11 @@ export const TOGGLE_DIV = 'TOGGLE_DIV';
 
 export const toggleDiv = targetDiv => {
   return (dispatch: () => void, getState: () => uiStateType) => {
-    let { isSelected } = getState();
-    if (isSelected) {
-      isSelected = false;
+    let { divVisibility } = getState();
+    if (divVisibility) {
+      divVisibility = false;
     } else {
-      isSelected = true;
+      divVisibility = true;
     }
 
     dispatch({
@@ -18,7 +18,7 @@ export const toggleDiv = targetDiv => {
     });
     dispatch({
       type: SET_VISIBILITY,
-      isSelected
+      divVisibility
     });
   };
 };

@@ -17,7 +17,7 @@ class HomePage extends Component {
 
 function mapStateToProps(state) {
   return {
-    uiId: state.uiId,
+    uiId: state.ui,
     divVisibility: state.divVisibility
   };
 }

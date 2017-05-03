@@ -23,7 +23,7 @@ export default class Home extends Component {
         <div className={styles.five} data-tid="five">5</div>
         <div className={styles.six} data-tid="six">6</div>
         {this.props.uiId}
-        {this.props.isSelected}
+        {this.props.divVisibility}
       </div>
     );
   }
@@ -32,5 +32,5 @@ export default class Home extends Component {
 Home.propTypes = {
   toggleDiv: PropTypes.func.isRequired,
   uiId: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool.isRequired
+  divVisibility: PropTypes.bool.isRequired
 };
